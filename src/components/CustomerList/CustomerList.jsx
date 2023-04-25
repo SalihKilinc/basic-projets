@@ -1,32 +1,18 @@
 
+
 import CustomerItem from '../CustomerItem/CustomerItem'
 import "./CustomerList.css"
 
-const customerData=[
-  {
-    id:1,
-    customerName1: "Garfield Tarcin",
-  },
-  {
-    id:2,
-    customerName1: "Dante",
-  },
-  {
-    id:3,
-    customerName1: "Birds",
-  },
-  {
-    id:4,
-    customerName1: "Bayern ",
-  },
-];
 
 
-function CustomerList  ()  {
+
+function CustomerList  ({customers})  {
+// app js icinde tanimladik customersi ordan child olarak buraya aktardik
+  
   return (
 <ul className='customer-list'>
 
-{customerData.map((customer)=>(
+{customers.map((customer)=>(
  <CustomerItem  customer={customer} key={customer.id} />
 ))}
 
