@@ -1,21 +1,19 @@
-
-
-const CustomerItem = (props) => {
-
+const CustomerItem = ({ customer, handleDelete }) => {
   return (
- 
-    <li className='customer-item'> 
-    <div className='customer-info'>
-  <img src="https://i.pravatar.cc/300" alt="" className='customer-avatar'/>
-  <span className='customer-name'>{props.customerName}</span>
-    </div>
-    <button className='delete-button'>
-      delete
-   
-    </button>
-      </li>
+    <li className="customer-item">
+      <div className="customer-info">
+        <img
+          src="https://i.pravatar.cc/300"
+          alt=""
+          className="customer-avatar"
+        />
+        <span className="customer-name">{customer.customerName}</span>
+      </div>
+      <button className="delete-button" onClick={() => handleDelete(customer)}>
+        <i className="bi bi-trash3"></i> DELETE
+      </button>
+    </li>
+  );
+};
 
-  )
-}
-
-export default CustomerItem
+export default CustomerItem;

@@ -18,7 +18,7 @@ setCustomers(customers.filter((customer) => customer.id !== item.id))
 <ul className='customer-list'>
 
 {customers.map((customer)=>(
- <CustomerItem  customer={customer} key={customer.id} />
+ <CustomerItem  customer={customer} key={customer.id} handleDelete={handleDelete} />  // secili kismi id ile sildik
 ))}
 
 

@@ -1,24 +1,26 @@
 import React, { useState } from 'react'
 import CustomerForm from './components/CustomerForm/CustomerForm'
 import CustomerList from './components/CustomerList/CustomerList'
-import CustomerItem from './components/CustomerItem/CustomerItem'
+import { Container } from 'react-bootstrap';
 
-const App = () => {
+
+function App  () {
 
   const  [customers , setCustomers] = useState([]);
 
   const addNewCustomer = (newCustomer)=>{
-   // setCustomers([...customers, newCustomer])
-   setCustomers((prevState) => [newCustomer, ...prevState])  // spret operatorunun gelismis hali
+   setCustomers([...customers, newCustomer])
+  // setCustomers((prevState) => [newCustomer, ...prevState]);  // spret operatorunun gelismis hali
   }
 
   return (
-    <div>
+    <Container>
       <h1>Customer Manege System</h1>
       <CustomerForm addNewCustomer={addNewCustomer} />
+      {customers.length === 0 && "There are no customer ......"}
       <CustomerList  customers={customers}  setCustomers={setCustomers} />  
-      <CustomerItem/>
-    </div>
+   
+    </Container>
   )
 }
 

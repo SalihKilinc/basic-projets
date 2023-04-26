@@ -1,9 +1,10 @@
 import { useState } from "react"
 import "./CustomerForm.css"
-import React from 'react'
 
-const CustomerForm = ({addNewCustomer}) => {
-const [customerName , setCustomerName] = useState("");
+
+const CustomerForm = ({ addNewCustomer }) => {
+  const [customerName, setCustomerName] = useState("");
+
 
 const handleSubmit=(e)=>{
 e.preventDefault(); // sayfanin tiklandiginda yenilenmesinin onune gectik
@@ -20,6 +21,8 @@ setCustomerName("") ;
 }
 
   return (
+
+    
 <form className='customer-form' onSubmit={handleSubmit} >
   <input type="text" className='customer-input' placeholder='Add a new customer' 
   onChange={(e) => setCustomerName (e.target.value)}
