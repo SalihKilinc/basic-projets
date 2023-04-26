@@ -6,9 +6,14 @@ import "./CustomerList.css"
 
 
 
-function CustomerList  ({customers})  {
+function CustomerList  ({customers ,setCustomers})  {
 // app js icinde tanimladik customersi ordan child olarak buraya aktardik
   
+const handleDelete = (item)=>{
+setCustomers(customers.filter((customer) => customer.id !== item.id))
+}
+
+
   return (
 <ul className='customer-list'>
 

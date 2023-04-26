@@ -16,7 +16,7 @@ const App = () => {
     <div>
       <h1>Customer Manege System</h1>
       <CustomerForm addNewCustomer={addNewCustomer} />
-      <CustomerList  customers={customers}/>  
+      <CustomerList  customers={customers}  setCustomers={setCustomers} />  
       <CustomerItem/>
     </div>
   )
